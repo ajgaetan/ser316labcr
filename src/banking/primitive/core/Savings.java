@@ -6,6 +6,11 @@
 
 package banking.primitive.core;
 
+/**
+  Class: Savings
+
+  Description: Account class for Savings account implementation
+*/
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int numWithdraws = 0;
@@ -49,7 +54,7 @@ public class Savings extends Account {
 		}
 		return false;
 	}
-	
+
 	public String getType() { return "Checking"; }
 
 	public String toString() {

@@ -6,7 +6,11 @@
 
 package banking.primitive.core;
 
+/**
+  Class: AccountServerFactory
 
+  Description: Creates and manages the AccountServer implementations
+*/
 public class AccountServerFactory {
 
 	protected static AccountServerFactory singleton = null;
