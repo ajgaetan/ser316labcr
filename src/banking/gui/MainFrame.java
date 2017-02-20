@@ -1,3 +1,9 @@
+/* Author: SER 316, Damien Raske II, Adam Gaetano
+ * Date: February 20 2017
+ * 
+ * Description: Manages the appearance and components of the JFrame.
+ */
+
 package banking.gui;
 
 import banking.primitive.core.Account;
