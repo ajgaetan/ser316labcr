@@ -1,3 +1,9 @@
+/* Author: SER 316, Damien Raske II, Adam Gaetano
+ * Date: February 20 2017
+ * 
+ * Description: Abstract class to be implemented by classes of specific account types.
+ */
+
 package banking.primitive.core;
 
 public abstract class Account implements java.io.Serializable {
