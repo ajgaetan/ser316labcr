@@ -17,6 +17,11 @@ import java.awt.Container;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+  Class: MainFrame
+
+  Description: Creates the GUI and holds the handler classes
+*/
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
 	AccountServer	myServer;
@@ -40,7 +45,7 @@ class MainFrame extends JFrame {
 
 		props = new Properties();
 
-		FileInputStream fis = null; 
+		FileInputStream fis = null;
 		try {
 			fis =  new FileInputStream(propertyFile);
 			props.load(fis);
@@ -52,7 +57,7 @@ class MainFrame extends JFrame {
 		constructForm();
 	}
 
-	
+
 	private void constructForm() {
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
@@ -77,28 +82,28 @@ class MainFrame extends JFrame {
 		displayAllAccountsButton.addActionListener(new DisplayHandler());
 		depositButton.addActionListener(new DepositHandler());
 		withdrawButton.addActionListener(new WithdrawHandler());
-		saveButton.addActionListener(new SaveAccountsHandler());		
-		
+		saveButton.addActionListener(new SaveAccountsHandler());
+
 		Container pane = getContentPane();
 		pane.setLayout(new FlowLayout());
-		
+
 		JPanel panel1 = new JPanel();
 		panel1.add(typeLabel);
 		panel1.add(typeOptions);
-		
+
 		JPanel panel2 = new JPanel();
 		panel2.add(displayAccountsButton);
 		panel2.add(displayAllAccountsButton);
 		panel2.add(saveButton);
-		
+
 		JPanel panel3 = new JPanel();
 		panel3.add(nameLabel);
 		panel3.add(nameField);
-		
+
 		JPanel panel4 = new JPanel();
 		panel4.add(balanceLabel);
 		panel4.add(balanceField);
-		
+
 		JPanel panel5 = new JPanel();
 		panel5.add(newAccountButton);
 		panel5.add(depositButton);
@@ -109,10 +114,15 @@ class MainFrame extends JFrame {
 		pane.add(panel3);
 		pane.add(panel4);
 		pane.add(panel5);
-		
+
 		setSize(400, 250);
 	}
 
+	/**
+	  Class: DisplayHandler
+
+	  Description: Handler class for display button
+	*/
 	class DisplayHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			List<Account> accounts = null;
@@ -132,7 +142,11 @@ class MainFrame extends JFrame {
 		}
 	}
 
-	// Complete a handler for new account button
+	/**
+	  Class: NewAccountHandler
+
+	  Description: Handler class for New Account button
+	*/
 	class NewAccountHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String type = typeOptions.getSelectedItem().toString();
@@ -146,8 +160,12 @@ class MainFrame extends JFrame {
 			}
 		}
 	}
-	
-	// Complete a handler for new account button
+
+	/**
+	  Class: SaveAccountsHandler
+
+	  Description: Handler for Save Accounts button
+	*/
 	class SaveAccountsHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			try {
@@ -159,7 +177,11 @@ class MainFrame extends JFrame {
 		}
 	}
 
-	// Complete a handler for deposit button
+	/**
+	  Class: DepositHandler
+
+	  Description: Handler for Deposit button
+	*/
 	class DepositHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String name = nameField.getText();
@@ -169,10 +191,15 @@ class MainFrame extends JFrame {
 				JOptionPane.showMessageDialog(null, "Deposit successful");
 			} else {
 				JOptionPane.showMessageDialog(null, "Deposit unsuccessful");
-			}		
+			}
 		}
 	}
-	// Complete a handler for deposit button
+
+	/**
+	  Class: WithdrawHandler
+
+	  Description: Handler for Withdraw button
+	*/
 	class WithdrawHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String name = nameField.getText();
@@ -182,13 +209,15 @@ class MainFrame extends JFrame {
 				JOptionPane.showMessageDialog(null, "Withdrawal successful");
 			} else {
 				JOptionPane.showMessageDialog(null, "Withdrawal unsuccessful");
-			}		
+			}
 		}
 	}
-	
-	//** Complete a handler for the Frame that terminates 
-	//** (System.exit(1)) on windowClosing event
 
+	/**
+	  Class: FrameHandler
+
+	  Description: Handler for Window Closing event
+	*/
 	static class FrameHandler extends WindowAdapter {
 		public void windowClosing(WindowEvent e) {
 
