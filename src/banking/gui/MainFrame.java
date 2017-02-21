@@ -26,6 +26,7 @@ import javax.swing.*;
 */
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
+<<<<<<< HEAD
 	private AccountServer	myServer;
 	private Properties		props;
 	private JLabel			typeLabel;
@@ -39,6 +40,21 @@ class MainFrame extends JFrame {
 	private JButton			newAccountButton;
 	private JButton			displayAccountsButton;
 	private JButton			displayODAccountsButton;
+=======
+	AccountServer	myServer;
+	Properties		props;
+	JLabel			typeLabel;
+	JLabel			nameLabel;
+	JLabel			balanceLabel;
+	JComboBox		typeOptions;
+	JTextField		nameField;
+	JTextField		balanceField;
+	JButton 		depositButton;
+	JButton 		withdrawButton;
+	JButton			newAccountButton;
+	JButton			displayAccountsButton;
+	JButton			displayODAccountsButton;
+>>>>>>> 769a6027e8ce9033c94903c247d85f3d93e076d8
 	
 	/**
 	   Method:	MainFrame
@@ -73,7 +89,11 @@ class MainFrame extends JFrame {
 	   
 	   Description: Sets up the JFrame components.
 	 */
+<<<<<<< HEAD
 	private void _constructForm() {
+=======
+	private void constructForm() {
+>>>>>>> 769a6027e8ce9033c94903c247d85f3d93e076d8
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
 		nameLabel		= new JLabel(props.getProperty("NameLabel"));
