@@ -40,8 +40,8 @@ final class Main {
 			System.exit(1);
 		}
 
-		String propertyFile = args[0];
-		JFrame frame = new MainFrame(propertyFile);
+		final String propertyFile = args[0];
+		final JFrame frame = new MainFrame(propertyFile);
 		frame.setVisible(true);
 
 	}

@@ -153,7 +153,7 @@ class MainFrame extends JFrame {
 			} else {
 				accounts = myServer.getAllAccounts();
 			}
-			StringBuffer sb = new StringBuffer();
+			final StringBuffer sb = new StringBuffer();
 			Account thisAcct = null;
 			for (Iterator<Account> li = accounts.iterator(); li.hasNext();) {
 				thisAcct = (Account)li.next();
@@ -178,9 +178,9 @@ class MainFrame extends JFrame {
 		   Description: Creates a new account with the given name, balance, and type.
 		 */
 		public void actionPerformed(ActionEvent e) {
-			String type = typeOptions.getSelectedItem().toString();
-			String name = nameField.getText();
-			String balance = balanceField.getText();
+			final String type = typeOptions.getSelectedItem().toString();
+			final String name = nameField.getText();
+			final String balance = balanceField.getText();
 
 			if (myServer.newAccount(type, name, Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Account created successfully");
@@ -227,9 +227,9 @@ class MainFrame extends JFrame {
 		   Description: Deposits a given amount into the account of a person with a given name.
 		 */
 		public void actionPerformed(ActionEvent e) {
-			String name = nameField.getText();
-			String balance = balanceField.getText();
-			Account acc = myServer.getAccount(name);
+			final String name = nameField.getText();
+			final String balance = balanceField.getText();
+			final Account acc = myServer.getAccount(name);
 			if (acc != null && acc.deposit(Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Deposit successful");
 			} else {
@@ -252,9 +252,9 @@ class MainFrame extends JFrame {
 		   Description: Withdraws a given amount from the account of a person with a given name.
 		 */
 		public void actionPerformed(ActionEvent e) {
-			String name = nameField.getText();
-			String balance = balanceField.getText();
-			Account acc = myServer.getAccount(name);
+			final String name = nameField.getText();
+			final String balance = balanceField.getText();
+			final Account acc = myServer.getAccount(name);
 			if (acc != null && acc.withdraw(Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Withdrawal successful");
 			} else {
