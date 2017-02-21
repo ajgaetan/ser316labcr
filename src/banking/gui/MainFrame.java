@@ -26,6 +26,7 @@ import javax.swing.*;
 */
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
+<<<<<<< HEAD
 	private AccountServer	myServer;
 	private Properties		props;
 	private JLabel			typeLabel;
@@ -40,6 +41,29 @@ class MainFrame extends JFrame {
 	private JButton			displayAccountsButton;
 	private JButton			displayODAccountsButton;
 
+=======
+	AccountServer	myServer;
+	Properties		props;
+	JLabel			typeLabel;
+	JLabel			nameLabel;
+	JLabel			balanceLabel;
+	JComboBox		typeOptions;
+	JTextField		nameField;
+	JTextField		balanceField;
+	JButton 		depositButton;
+	JButton 		withdrawButton;
+	JButton			newAccountButton;
+	JButton			displayAccountsButton;
+	JButton			displayODAccountsButton;
+	
+	/**
+	   Method:	MainFrame
+	   Inputs:	String
+	   Returns:	void
+	   
+	   Description: Initializes the server. Reads properties from the propertyFile String. Initializes construction of the JFrame.
+	 */
+>>>>>>> Issue 3
 	public MainFrame(String propertyFile) throws IOException {
 
 		//** initialize myServer
@@ -59,8 +83,19 @@ class MainFrame extends JFrame {
 		_constructForm();
 	}
 
+<<<<<<< HEAD
 
 	private void _constructForm() {
+=======
+	/**
+	   Method:	constructForm
+	   Inputs:	void
+	   Returns:	void
+	   
+	   Description: Sets up the JFrame components.
+	 */
+	private void constructForm() {
+>>>>>>> Issue 3
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
 		nameLabel		= new JLabel(props.getProperty("NameLabel"));
@@ -126,6 +161,13 @@ class MainFrame extends JFrame {
 	  Description: Handler class for display button
 	*/
 	class DisplayHandler implements ActionListener {
+		/**
+		   Method:	actionPerformed
+		   Inputs:	ActionEvent
+		   Returns:	void
+		   
+		   Description: If the JButton displayAccountsButton is pressed the active accounts are shown. Otherwise, all accounts are shown.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			List<Account> accounts = null;
 			if (e.getSource() == displayAccountsButton) {
@@ -150,6 +192,13 @@ class MainFrame extends JFrame {
 	  Description: Handler class for New Account button
 	*/
 	class NewAccountHandler implements ActionListener {
+		/**
+		   Method:	actionPerformed
+		   Inputs:	ActionEvent
+		   Returns:	void
+		   
+		   Description: Creates a new account with the given name, balance, and type.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			String type = typeOptions.getSelectedItem().toString();
 			String name = nameField.getText();
@@ -169,6 +218,13 @@ class MainFrame extends JFrame {
 	  Description: Handler for Save Accounts button
 	*/
 	class SaveAccountsHandler implements ActionListener {
+		/**
+		   Method:	actionPerformed
+		   Inputs:	ActionEvent
+		   Returns:	void
+		   
+		   Description: Saves the accounts.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			try {
 				myServer.saveAccounts();
@@ -185,6 +241,13 @@ class MainFrame extends JFrame {
 	  Description: Handler for Deposit button
 	*/
 	class DepositHandler implements ActionListener {
+		/**
+		   Method:	actionPerformed
+		   Inputs:	ActionEvent
+		   Returns:	void
+		   
+		   Description: Deposits a given amount into the account of a person with a given name.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			String name = nameField.getText();
 			String balance = balanceField.getText();
@@ -203,6 +266,13 @@ class MainFrame extends JFrame {
 	  Description: Handler for Withdraw button
 	*/
 	class WithdrawHandler implements ActionListener {
+		/**
+		   Method:	actionPerformed
+		   Inputs:	ActionEvent
+		   Returns:	void
+		   
+		   Description: Withdraws a given amount from the account of a person with a given name.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			String name = nameField.getText();
 			String balance = balanceField.getText();
@@ -221,6 +291,13 @@ class MainFrame extends JFrame {
 	  Description: Handler for Window Closing event
 	*/
 	static class FrameHandler extends WindowAdapter {
+		/**
+		   Method:	windowClosing
+		   Inputs:	WindowEvent
+		   Returns:	void
+		   
+		   Description: Closes the program.
+		 */
 		public void windowClosing(WindowEvent e) {
 
 			System.exit(0);
