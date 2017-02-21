@@ -26,7 +26,6 @@ import javax.swing.*;
 */
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
-<<<<<<< HEAD
 	private AccountServer	myServer;
 	private Properties		props;
 	private JLabel			typeLabel;
@@ -40,21 +39,6 @@ class MainFrame extends JFrame {
 	private JButton			newAccountButton;
 	private JButton			displayAccountsButton;
 	private JButton			displayODAccountsButton;
-
-=======
-	AccountServer	myServer;
-	Properties		props;
-	JLabel			typeLabel;
-	JLabel			nameLabel;
-	JLabel			balanceLabel;
-	JComboBox		typeOptions;
-	JTextField		nameField;
-	JTextField		balanceField;
-	JButton 		depositButton;
-	JButton 		withdrawButton;
-	JButton			newAccountButton;
-	JButton			displayAccountsButton;
-	JButton			displayODAccountsButton;
 	
 	/**
 	   Method:	MainFrame
@@ -63,7 +47,6 @@ class MainFrame extends JFrame {
 	   
 	   Description: Initializes the server. Reads properties from the propertyFile String. Initializes construction of the JFrame.
 	 */
->>>>>>> Issue 3
 	public MainFrame(String propertyFile) throws IOException {
 
 		//** initialize myServer
@@ -83,10 +66,6 @@ class MainFrame extends JFrame {
 		_constructForm();
 	}
 
-<<<<<<< HEAD
-
-	private void _constructForm() {
-=======
 	/**
 	   Method:	constructForm
 	   Inputs:	void
@@ -94,8 +73,7 @@ class MainFrame extends JFrame {
 	   
 	   Description: Sets up the JFrame components.
 	 */
-	private void constructForm() {
->>>>>>> Issue 3
+	private void _constructForm() {
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
 		nameLabel		= new JLabel(props.getProperty("NameLabel"));

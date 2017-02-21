@@ -65,9 +65,6 @@ class ServerSolution implements AccountServer {
 		}
 	}
 
-<<<<<<< HEAD
-	private boolean _newAccountFactory(String type, String name, float balance)
-=======
 	/**
 	   Method:	newAccountFactory
 	   Inputs:	String, String, float
@@ -75,8 +72,7 @@ class ServerSolution implements AccountServer {
 	   
 	   Description: Creates a new Account of the given type and adds it to the accountMap.
 	 */
-	private boolean newAccountFactory(String type, String name, float balance)
->>>>>>> Issue 3
+	private boolean _newAccountFactory(String type, String name, float balance)
 		throws IllegalArgumentException {
 
 		if (accountMap.get(name) != null) return false;
