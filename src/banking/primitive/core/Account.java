@@ -1,6 +1,6 @@
 /* Author: SER 316, Damien Raske II, Adam Gaetano
  * Date: February 20 2017
- * 
+ *
  * Description: Abstract class to be implemented by classes of specific account types.
  */
 
@@ -9,42 +9,42 @@ package banking.primitive.core;
 
 /**
   Class: Account
-  
+
   Description: Abstract class for Account
 */
 public abstract class Account implements java.io.Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long _serialVersionUID = 1L;
 
     protected enum State {
         OPEN, CLOSED, OVERDRAWN
     };
 
-    protected float balance = 0.0F;
-    protected String name;
-    private State state;
+    protected float _balance = 0.0F;
+    protected String _name;
+    private State _state;
 
     protected Account(String n) {
-        name = n;
+        _name = n;
         state = State.OPEN;
     }
 
     protected Account(String n, float b) {
         this(n);
-        balance = b;
+        _balance = b;
     }
 
     /**
      * @return name of the Account
      */
     public final String getName() {
-        return name;
+        return _name;
     }
 
     /**
      * @return balance in the Account
      */
     public final float getBalance() {
-        return balance;
+        return _balance;
     }
 
     /**
@@ -73,16 +73,16 @@ public abstract class Account implements java.io.Serializable {
      */
     public abstract String getType();
 
-    protected final State getState() {
+    protected final State _getState() {
         return state;
     }
 
-    protected final void setState(State s) {
+    protected final void _setState(State s) {
         state = s;
     }
 
     public String toString() {
-        return "Account " + name + " has $" + balance + "and is " + getState()
+        return "Account " + _name + " has $" + _balance + "and is " + getState()
                 + "\n";
     }
 }

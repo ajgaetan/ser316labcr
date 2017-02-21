@@ -1,6 +1,6 @@
 /* Author: SER 316, Damien Raske II, Adam Gaetano
  * Date: February 20 2017
- * 
+ *
  * Description: Contains the data stored in a Savings account and manages what can be done with that data.
  */
 
@@ -12,8 +12,8 @@ package banking.primitive.core;
   Description: Account class for Savings account implementation
 */
 public class Savings extends Account {
-	private static final long serialVersionUID = 111L;
-	private int numWithdraws = 0;
+	private static final long _serialVersionUID = 111L;
+	private int _numWithdraws = 0;
 
 	public Savings(String name) {
 		super(name);
@@ -27,10 +27,10 @@ public class Savings extends Account {
 	 * A deposit comes with a fee of 50 cents per deposit
 	 */
 	public boolean deposit(float amount) {
-		if (getState() != State.CLOSED && amount > 0.0f) {
+		if (_getState() != State.CLOSED && amount > 0.0f) {
 			balance = balance + amount - 0.50F;
 			if (balance >= 0.0f) {
-				setState(State.OPEN);
+				_setState(State.OPEN);
 			}
 		}
 		return false;
@@ -41,14 +41,14 @@ public class Savings extends Account {
 	 * An account whose balance dips below 0 is in an OVERDRAWN state
 	 */
 	public boolean withdraw(float amount) {
-		if (getState() == State.OPEN && amount > 0.0f) {
+		if (_getState() == State.OPEN && amount > 0.0f) {
 			balance = balance - amount;
-			numWithdraws++;
-			if (numWithdraws > 3)
+			_numWithdraws++;
+			if (_numWithdraws > 3)
 				balance = balance - 1.0f;
 			// KG BVA: should be < 0
 			if (balance <= 0.0f) {
-				setState(State.OVERDRAWN);
+				_setState(State.OVERDRAWN);
 			}
 			return true;
 		}
