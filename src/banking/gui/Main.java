@@ -37,14 +37,4 @@ final class Main {
 
 	}
 
-	/**
-		 Method:	Main
-		 Inputs:	void
-		 Returns:	void
-
-		 Description: Who knows?
-	 */
-	private Main() {
-	}
-
 }
