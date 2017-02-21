@@ -50,16 +50,16 @@ class ServerSolution implements AccountServer {
 					}
 				}
 			}
-		} 
+		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
-		} 
+		}
 		finally {
 			if (in != null) {
 				try {
 					in.close();
-				} 
+				}
 				catch (Throwable t) {
 					t.printStackTrace();
 				}
@@ -134,16 +134,16 @@ class ServerSolution implements AccountServer {
 			for (int i=0; i < accountMap.size(); i++) {
 				out.writeObject(accountMap.get(i));
 			}
-		} 
+		}
 		catch (Exception e) {
 			e.printStackTrace();
-			throw new IOException("Could not write file:" + fileName);
-		} 
+			System.out.println("Could not write file:" + fileName);
+		}
 		finally {
 			if (out != null) {
 				try {
 					out.close();
-				} 
+				}
 				catch (Throwable t) {
 					t.printStackTrace();
 				}
@@ -169,18 +169,18 @@ class ServerSolution implements AccountServer {
 		if ("Checking".equals(type)) {
 			acc = new Checking(name, balance);
 
-		} 
+		}
 		else if ("Savings".equals(type)) {
 			acc = new Savings(name, balance);
 
-		} 
+		}
 		else {
 			throw new IllegalArgumentException("Bad account type:" + type);
 		}
-		
+
 		try {
 			accountMap.put(acc.getName(), acc);
-		} 
+		}
 		catch (Exception exc) {
 			return false;
 		}
