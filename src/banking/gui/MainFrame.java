@@ -26,25 +26,12 @@ import javax.swing.*;
 */
 @SuppressWarnings("serial")
 class MainFrame extends JFrame {
-	private AccountServer	myServer;
-	private Properties		props;
-	private JLabel			typeLabel;
-	private JLabel			nameLabel;
-	private JLabel			balanceLabel;
-	private JComboBox		typeOptions;
-	private JTextField		nameField;
-	private JTextField		balanceField;
-	private JButton 		depositButton;
-	private JButton 		withdrawButton;
-	private JButton			newAccountButton;
-	private JButton			displayAccountsButton;
-	private JButton			displayODAccountsButton;
-	
+
 	/**
 	   Method:	MainFrame
 	   Inputs:	String
 	   Returns:	void
-	   
+
 	   Description: Initializes the server. Reads properties from the propertyFile String. Initializes construction of the JFrame.
 	 */
 	public MainFrame(String propertyFile) throws IOException {
@@ -70,7 +57,7 @@ class MainFrame extends JFrame {
 	   Method:	constructForm
 	   Inputs:	void
 	   Returns:	void
-	   
+
 	   Description: Sets up the JFrame components.
 	 */
 	private void _constructForm() {
@@ -143,7 +130,7 @@ class MainFrame extends JFrame {
 		   Method:	actionPerformed
 		   Inputs:	ActionEvent
 		   Returns:	void
-		   
+
 		   Description: If the JButton displayAccountsButton is pressed the active accounts are shown. Otherwise, all accounts are shown.
 		 */
 		public void actionPerformed(ActionEvent e) {
@@ -174,7 +161,7 @@ class MainFrame extends JFrame {
 		   Method:	actionPerformed
 		   Inputs:	ActionEvent
 		   Returns:	void
-		   
+
 		   Description: Creates a new account with the given name, balance, and type.
 		 */
 		public void actionPerformed(ActionEvent e) {
@@ -200,7 +187,7 @@ class MainFrame extends JFrame {
 		   Method:	actionPerformed
 		   Inputs:	ActionEvent
 		   Returns:	void
-		   
+
 		   Description: Saves the accounts.
 		 */
 		public void actionPerformed(ActionEvent e) {
@@ -223,7 +210,7 @@ class MainFrame extends JFrame {
 		   Method:	actionPerformed
 		   Inputs:	ActionEvent
 		   Returns:	void
-		   
+
 		   Description: Deposits a given amount into the account of a person with a given name.
 		 */
 		public void actionPerformed(ActionEvent e) {
@@ -248,7 +235,7 @@ class MainFrame extends JFrame {
 		   Method:	actionPerformed
 		   Inputs:	ActionEvent
 		   Returns:	void
-		   
+
 		   Description: Withdraws a given amount from the account of a person with a given name.
 		 */
 		public void actionPerformed(ActionEvent e) {
@@ -273,7 +260,7 @@ class MainFrame extends JFrame {
 		   Method:	windowClosing
 		   Inputs:	WindowEvent
 		   Returns:	void
-		   
+
 		   Description: Closes the program.
 		 */
 		public void windowClosing(WindowEvent e) {
@@ -281,4 +268,19 @@ class MainFrame extends JFrame {
 			System.exit(0);
 		}
 	}
+
+	private AccountServer	myServer;
+	private Properties		props;
+	private JLabel			typeLabel;
+	private JLabel			nameLabel;
+	private JLabel			balanceLabel;
+	private JComboBox		typeOptions;
+	private JTextField		nameField;
+	private JTextField		balanceField;
+	private JButton 		depositButton;
+	private JButton 		withdrawButton;
+	private JButton			newAccountButton;
+	private JButton			displayAccountsButton;
+	private JButton			displayODAccountsButton;
+
 }
