@@ -153,14 +153,14 @@ class MainFrame extends JFrame {
 			} else {
 				accounts = myServer.getAllAccounts();
 			}
-			final StringBuffer sb = new StringBuffer();
+			final StringBuffer SB = new StringBuffer();
 			Account thisAcct = null;
 			for (Iterator<Account> li = accounts.iterator(); li.hasNext();) {
 				thisAcct = (Account)li.next();
-				sb.append(thisAcct.toString()+"\n");
+				SB.append(thisAcct.toString()+"\n");
 			}
 
-			JOptionPane.showMessageDialog(null, sb.toString());
+			JOptionPane.showMessageDialog(null, SB.toString());
 		}
 	}
 
@@ -178,11 +178,11 @@ class MainFrame extends JFrame {
 		   Description: Creates a new account with the given name, balance, and type.
 		 */
 		public void actionPerformed(ActionEvent e) {
-			final String type = typeOptions.getSelectedItem().toString();
-			final String name = nameField.getText();
-			final String balance = balanceField.getText();
+			final String TYPE = typeOptions.getSelectedItem().toString();
+			final String NAME = nameField.getText();
+			final String BALANCE = balanceField.getText();
 
-			if (myServer.newAccount(type, name, Float.parseFloat(balance))) {
+			if (myServer.newAccount(TYPE, NAME, Float.parseFloat(BALANCE))) {
 				JOptionPane.showMessageDialog(null, "Account created successfully");
 			} else {
 				JOptionPane.showMessageDialog(null, "Account not created!");
@@ -227,10 +227,10 @@ class MainFrame extends JFrame {
 		   Description: Deposits a given amount into the account of a person with a given name.
 		 */
 		public void actionPerformed(ActionEvent e) {
-			final String name = nameField.getText();
-			final String balance = balanceField.getText();
-			final Account acc = myServer.getAccount(name);
-			if (acc != null && acc.deposit(Float.parseFloat(balance))) {
+			final String NAME = nameField.getText();
+			final String BALANCE = balanceField.getText();
+			final Account ACC = myServer.getAccount(NAME);
+			if (ACC != null && ACC.deposit(Float.parseFloat(BALANCE))) {
 				JOptionPane.showMessageDialog(null, "Deposit successful");
 			} else {
 				JOptionPane.showMessageDialog(null, "Deposit unsuccessful");
@@ -252,10 +252,10 @@ class MainFrame extends JFrame {
 		   Description: Withdraws a given amount from the account of a person with a given name.
 		 */
 		public void actionPerformed(ActionEvent e) {
-			final String name = nameField.getText();
-			final String balance = balanceField.getText();
-			final Account acc = myServer.getAccount(name);
-			if (acc != null && acc.withdraw(Float.parseFloat(balance))) {
+			final String NAME = nameField.getText();
+			final String BALANCE = balanceField.getText();
+			final Account ACC = myServer.getAccount(NAME);
+			if (ACC != null && ACC.withdraw(Float.parseFloat(BALANCE))) {
 				JOptionPane.showMessageDialog(null, "Withdrawal successful");
 			} else {
 				JOptionPane.showMessageDialog(null, "Withdrawal unsuccessful");
