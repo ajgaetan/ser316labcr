@@ -25,54 +25,56 @@ public abstract class Account implements java.io.Serializable {
     protected String name;
     private State state;
 
+    /**
+	   Method:	Account
+	   Inputs:	String
+	   Returns:	void
+	   
+	   Description: Sets the variable name to a given name and sets the State to OPEN.
+	 */
     protected Account(String n) {
         name = n;
         state = State.OPEN;
     }
-
+    
+    /**
+	   Method:	Account
+	   Inputs:	String, float
+	   Returns:	void
+	   
+	   Description: Calls the Account(String n) constructor and sets the balance equal to b.
+	 */
     protected Account(String n, float b) {
         this(n);
         balance = b;
     }
 
-    /**
-     * @return name of the Account
-     */
     public final String getName() {
         return name;
     }
 
-    /**
-     * @return balance in the Account
-     */
     public final float getBalance() {
         return balance;
     }
 
     /**
-     * Adds money to an account. May not be done if the account is CLOSED
-     *
-     * @param parameter
-     *            amount is a deposit and must be > 0
-     * @return true if the deposit was successful, false if not due to amount or
-     *         invalid state
-     */
+	   Method:	deposit
+	   Inputs:	float
+	   Returns:	boolean
+	   
+	   Description: Declares an abstract method.
+	 */
     public abstract boolean deposit(float amount);
 
     /**
-     * Takes money out of an account. If the balance falls below 0 then the
-     * account is moved to an OVERDRAWN state
-     *
-     * @param parameter
-     *            amount is a withdrawal and must be > 0
-     * @return true if the deposit was successful, false if not due to amount or
-     *         invalid state
-     */
+	   Method:	withdraw
+	   Inputs:	float
+	   Returns:	boolean
+	   
+	   Description: Declares an abstract method.
+	 */
     public abstract boolean withdraw(float amount);
 
-    /**
-     * @return either "Checking" or "Savings"
-     */
     public abstract String getType();
 
     protected final State getState() {
@@ -83,6 +85,13 @@ public abstract class Account implements java.io.Serializable {
         state = s;
     }
 
+    /**
+	   Method:	toString
+	   Inputs:	void
+	   Returns:	String
+	   
+	   Description: Returns a String describing the account.
+	 */
     public String toString() {
         return "Account " + name + " has $" + balance + "and is " + getState()
                 + "\n";

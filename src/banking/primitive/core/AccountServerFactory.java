@@ -17,10 +17,24 @@ public class AccountServerFactory {
 
 	protected static AccountServerFactory singleton = null;
 
+	/**
+	   Method:	AccountServerFactory
+	   Inputs:	void
+	   Returns:	void
+	   
+	   Description: Default constructor that does nothing
+	 */
 	protected AccountServerFactory() {
 
 	}
 
+	/**
+	   Method:	AccountServerFactory
+	   Inputs:	void
+	   Returns:	AccountServerFactory
+	   
+	   Description: Returns the current instance
+	 */
 	public static AccountServerFactory getMe() {
 		if (singleton == null) {
 			singleton = new AccountServerFactory();
@@ -29,6 +43,13 @@ public class AccountServerFactory {
 		return singleton;
 	}
 
+	/**
+	   Method:	lookup
+	   Inputs:	void
+	   Returns:	ServerSolution
+	   
+	   Description: Returns an instance of the server
+	 */
 	public AccountServer lookup() {
 		return new ServerSolution();
 	}

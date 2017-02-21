@@ -17,15 +17,21 @@ import javax.swing.JFrame;
 */
 final class Main {
 	/**
-	 * Private constructor to address STYLE issue.
+	   Method:	Main
+	   Inputs:	void
+	   Returns:	void
+	   
+	   Description: Who knows?
 	 */
 	private Main() {
 	}
 
 	/**
-	 * All methods should have a Javadoc according to STYLE.
-	 * @param args command-line arguments
-	 * @throws Exception as per typical main specifications
+	   Method:	main
+	   Inputs:	String[]
+	   Returns:	void
+	   
+	   Description: Programs main method. Program exits if no argument is given. Initializes MainFrame with the given arg as a parameter.
 	 */
 	public static void main(final String[] args) throws Exception {
 

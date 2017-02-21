@@ -17,16 +17,35 @@ public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int numWithdraws = 0;
 
+	/**
+	   Method:	Savings
+	   Inputs:	String
+	   Returns:	void
+	   
+	   Description: Calls the Account(String) constructor.
+	 */
 	public Savings(String name) {
 		super(name);
 	}
 
+	/**
+	   Method:	Savings
+	   Inputs:	String, float
+	   Returns:	void
+	   
+	   Description: Calls the Account(String, float) constructor.
+	 */
 	public Savings(String name, float balance) throws IllegalArgumentException {
 		super(name, balance);
 	}
 
 	/**
-	 * A deposit comes with a fee of 50 cents per deposit
+	   Method:	deposit
+	   Inputs:	float
+	   Returns:	boolean
+	   
+	   Description: If the state is not CLOSED and the amount being deposited it greater than 0, then the amount is deposited. 50 cents 
+	   is charged for each deposit. If the deposit brings the account balance over 0 then the account state is set to OPEN.
 	 */
 	public boolean deposit(float amount) {
 		if (getState() != State.CLOSED && amount > 0.0f) {
@@ -39,8 +58,12 @@ public class Savings extends Account {
 	}
 
 	/**
-	 * A withdrawal. After 3 withdrawals a fee of $1 is added to each withdrawal.
-	 * An account whose balance dips below 0 is in an OVERDRAWN state
+	   Method:	withdraw
+	   Inputs:	float
+	   Returns:	boolean
+	   
+	   Description: If the account is open and the amount is greater than 0, then the amount is withdrawn. After 3 withdrawals a $1 fee is 
+	   charged per withdrawal. If the withdrawal being the balance below zero the account is changed to OVERDRAWN.
 	 */
 	public boolean withdraw(float amount) {
 		if (getState() == State.OPEN && amount > 0.0f) {
@@ -59,6 +82,13 @@ public class Savings extends Account {
 
 	public String getType() { return "Checking"; }
 
+	/**
+	   Method:	toString
+	   Inputs:	void
+	   Returns:	String
+	   
+	   Description: Returns a String representation of the Savings account.
+	 */
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();
 	}
