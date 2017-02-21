@@ -15,7 +15,7 @@ package banking.primitive.core;
   Description: Abstract class for Account
 */
 public abstract class Account implements java.io.Serializable {
-    private static final long _serialVersionUID = 1L;
+    private static final long _SERIAL_VERSION_UID = 1L;
 
     protected enum State {
         OPEN, CLOSED, OVERDRAWN

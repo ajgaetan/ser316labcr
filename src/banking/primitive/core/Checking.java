@@ -15,7 +15,7 @@ package banking.primitive.core;
 */
 public class Checking extends Account {
 
-	private static final long _serialVersionUID = 11L;
+	private static final long _SERIAL_VERSION_UID = 11L;
 	private int _numWithdraws = 0;
 
 	/**
