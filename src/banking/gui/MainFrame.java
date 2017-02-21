@@ -1,8 +1,8 @@
-/* 
+/*
    File: MainFrame.java
    Author: SER 316, Damien Raske II, Adam Gaetano
    Date: February 20 2017
- 
+
    Description: Manages the appearance and components of the JFrame.
  */
 
@@ -56,11 +56,11 @@ class MainFrame extends JFrame {
 			ioe.printStackTrace();
 			throw ioe;
 		}
-		constructForm();
+		_constructForm();
 	}
 
 
-	private void constructForm() {
+	private void _constructForm() {
 		//*** Make these read from properties
 		typeLabel		= new JLabel(props.getProperty("TypeLabel"));
 		nameLabel		= new JLabel(props.getProperty("NameLabel"));
