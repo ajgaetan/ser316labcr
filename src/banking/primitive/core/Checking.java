@@ -79,7 +79,7 @@ public class Checking extends Account {
 	public boolean withdraw(float amount) {
 		if (amount > 0.0f) {
 			// KG: incorrect, last balance check should be >=
-			if (_getState() == State.OPEN || (_getState() == State.OVERDRAWN && _balance > -100.0f)) {
+			if (_getState() == State.OPEN || (_getState() == State.OVERDRAWN && _balance > -100.0f) && _balance - amount > -100.0) {
 				_balance = _balance - amount;
 				_numWithdraws++;
 				if (_numWithdraws > 10){
