@@ -57,7 +57,8 @@ public class Checking extends Account {
 	   Returns:	boolean
 	   
 	   Description: If the state is not CLOSED and the amount being deposited is greater than 0, then the amount is deposited into the 
-	   account. If the deposit brings the account balance over 0 then the state is changed to OPEN.
+	   account. If the deposit brings the account balance over 0 then the state is changed to OPEN. Returns true if successful, false 
+	   if it fails.
 	 */
 	public boolean deposit(float amount) {
 		if (_getState() != State.CLOSED && amount > 0.0f) {
@@ -76,7 +77,7 @@ public class Checking extends Account {
 	   Returns:	boolean
 	   
 	   Description: If the state is OPEN or OVERDRAWN with a balance greater than -100, then the amount is withdrawn. After 
-	   10 withdrawals a $2 fee is added to each future withdrawal.
+	   10 withdrawals a $2 fee is added to each future withdrawal. Returns true if successful, false if it fails.
 	 */
 	public boolean withdraw(float amount) {
 		if (amount > 0.0f) {

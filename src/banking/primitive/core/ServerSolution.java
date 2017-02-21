@@ -70,7 +70,7 @@ class ServerSolution implements AccountServer {
 	   Inputs:	String, String, float
 	   Returns:	boolean
 	   
-	   Description: Creates a new Account of the given type and adds it to the accountMap.
+	   Description: Creates a new Account of the given type and adds it to the accountMap. Returns true if successful, false if it fails.
 	 */
 	private boolean _newAccountFactory(String type, String name, float balance)
 		throws IllegalArgumentException {
@@ -100,7 +100,8 @@ class ServerSolution implements AccountServer {
 	   Inputs:	String, String, float
 	   Returns:	boolean
 	   
-	   Description: Checks that the given balance is greater than 0. It then calls newAccountFactory(String, String, float).
+	   Description: Checks that the given balance is greater than 0. It then calls newAccountFactory(String, String, float). Returns true 
+	   if successful, false if it fails.
 	 */
 	public boolean newAccount(String type, String name, float balance)
 		throws IllegalArgumentException {
@@ -115,7 +116,7 @@ class ServerSolution implements AccountServer {
 	   Inputs:	String
 	   Returns:	boolean
 	   
-	   Description: Sets the state of an account with the given name to CLOSED.
+	   Description: Sets the state of an account with the given name to CLOSED. Returns true if successful, false if it fails.
 	 */
 	public boolean closeAccount(String name) {
 		Account acc = accountMap.get(name);

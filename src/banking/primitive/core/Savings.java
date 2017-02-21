@@ -45,7 +45,8 @@ public class Savings extends Account {
 	   Returns:	boolean
 	   
 	   Description: If the state is not CLOSED and the amount being deposited it greater than 0, then the amount is deposited. 50 cents 
-	   is charged for each deposit. If the deposit brings the account balance over 0 then the account state is set to OPEN.
+	   is charged for each deposit. If the deposit brings the account balance over 0 then the account state is set to OPEN. Returns true 
+	   if successful, false if it fails.
 	 */
 	public boolean deposit(float amount) {
 		if (_getState() != State.CLOSED && amount > 0.0f) {
@@ -63,7 +64,8 @@ public class Savings extends Account {
 	   Returns:	boolean
 	   
 	   Description: If the account is open and the amount is greater than 0, then the amount is withdrawn. After 3 withdrawals a $1 fee is 
-	   charged per withdrawal. If the withdrawal being the balance below zero the account is changed to OVERDRAWN.
+	   charged per withdrawal. If the withdrawal being the balance below zero the account is changed to OVERDRAWN. Returns true if successful, 
+	   false if it fails.
 	 */
 	public boolean withdraw(float amount) {
 		if (_getState() == State.OPEN && amount > 0.0f) {
