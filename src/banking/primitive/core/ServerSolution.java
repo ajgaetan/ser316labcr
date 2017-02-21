@@ -27,6 +27,13 @@ class ServerSolution implements AccountServer {
 
 	Map<String,Account> accountMap = null;
 
+	/**
+	   Method:	ServerSolution
+	   Inputs:	void
+	   Returns:	void
+	   
+	   Description: Reads in the existing account from a file.
+	 */
 	public ServerSolution() {
 		accountMap = new HashMap<String,Account>();
 		File file = new File(fileName);
@@ -58,6 +65,13 @@ class ServerSolution implements AccountServer {
 		}
 	}
 
+	/**
+	   Method:	newAccountFactory
+	   Inputs:	String, String, float
+	   Returns:	boolean
+	   
+	   Description: Creates a new Account of the given type and adds it to the accountMap.
+	 */
 	private boolean _newAccountFactory(String type, String name, float balance)
 		throws IllegalArgumentException {
 
@@ -81,6 +95,13 @@ class ServerSolution implements AccountServer {
 		return true;
 	}
 
+	/**
+	   Method:	newAccount
+	   Inputs:	String, String, float
+	   Returns:	boolean
+	   
+	   Description: Checks that the given balance is greater than 0. It then calls newAccountFactory(String, String, float).
+	 */
 	public boolean newAccount(String type, String name, float balance)
 		throws IllegalArgumentException {
 
@@ -89,12 +110,19 @@ class ServerSolution implements AccountServer {
 		return _newAccountFactory(type, name, balance);
 	}
 
+	/**
+	   Method:	closeAccount
+	   Inputs:	String
+	   Returns:	boolean
+	   
+	   Description: Sets the state of an account with the given name to CLOSED.
+	 */
 	public boolean closeAccount(String name) {
 		Account acc = accountMap.get(name);
 		if (acc == null) {
 			return false;
 		}
-		acc.setState(State.CLOSED);
+		acc._setState(State.CLOSED);
 		return true;
 	}
 
@@ -110,13 +138,20 @@ class ServerSolution implements AccountServer {
 		List<Account> result = new ArrayList<Account>();
 
 		for (Account acc : accountMap.values()) {
-			if (acc.getState() != State.CLOSED) {
+			if (acc._getState() != State.CLOSED) {
 				result.add(acc);
 			}
 		}
 		return result;
 	}
 
+	/**
+	   Method:	saveAccounts
+	   Inputs:	void
+	   Returns:	void
+	   
+	   Description: Saves all existing accounts to a file.
+	 */
 	public void saveAccounts() throws IOException {
 		ObjectOutputStream out = null;
 		try {

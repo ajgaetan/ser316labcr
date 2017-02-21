@@ -28,6 +28,7 @@ public interface AccountServer {
 		@throws IllegalArgumentException if the account type is invalid or the balance is non-negative.
 		@return boolean true if the account was created and stored, false otherwise
 	*/
+	
 	public boolean	newAccount(String type, String name, float balance) throws IllegalArgumentException;
 
 	/** Close an account
