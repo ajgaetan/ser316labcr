@@ -15,33 +15,24 @@ package banking.primitive.core;
   Description: Abstract class for Account
 */
 public abstract class Account implements java.io.Serializable {
-    private static final long _SERIAL_VERSION_UID = 1L;
-
-    protected enum State {
-        OPEN, CLOSED, OVERDRAWN
-    };
-
-    protected float _balance = 0.0F;
-    protected String _name;
-    private State _state;
 
     /**
 	   Method:	Account
 	   Inputs:	String
 	   Returns:	void
-	   
+
 	   Description: Sets the variable name to a given name and sets the State to OPEN.
 	 */
     protected Account(String n) {
         _name = n;
         _state = State.OPEN;
     }
-    
+
     /**
 	   Method:	Account
 	   Inputs:	String, float
 	   Returns:	void
-	   
+
 	   Description: Calls the Account(String n) constructor and sets the balance equal to b.
 	 */
     protected Account(String n, float b) {
@@ -61,7 +52,7 @@ public abstract class Account implements java.io.Serializable {
 	   Method:	deposit
 	   Inputs:	float
 	   Returns:	boolean
-	   
+
 	   Description: Declares an abstract method.
 	 */
     public abstract boolean deposit(float amount);
@@ -70,12 +61,24 @@ public abstract class Account implements java.io.Serializable {
 	   Method:	withdraw
 	   Inputs:	float
 	   Returns:	boolean
-	   
+
 	   Description: Declares an abstract method.
 	 */
     public abstract boolean withdraw(float amount);
 
     public abstract String getType();
+
+    /**
+	   Method:	toString
+	   Inputs:	void
+	   Returns:	String
+
+	   Description: Returns a String describing the account.
+	 */
+    public String toString() {
+        return "Account " + _name + " has $" + _balance + "and is " + _getState()
+                + "\n";
+    }
 
     protected final State _getState() {
         return _state;
@@ -85,15 +88,14 @@ public abstract class Account implements java.io.Serializable {
         _state = s;
     }
 
-    /**
-	   Method:	toString
-	   Inputs:	void
-	   Returns:	String
-	   
-	   Description: Returns a String describing the account.
-	 */
-    public String toString() {
-        return "Account " + _name + " has $" + _balance + "and is " + _getState()
-                + "\n";
-    }
+    private static final long _SERIAL_VERSION_UID = 1L;
+
+    protected enum State {
+        OPEN, CLOSED, OVERDRAWN
+    };
+
+    protected float _balance = 0.0F;
+    protected String _name;
+    private State _state;
+
 }

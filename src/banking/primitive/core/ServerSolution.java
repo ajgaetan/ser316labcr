@@ -25,13 +25,11 @@ class ServerSolution implements AccountServer {
 
 	static String fileName = "accounts.ser";
 
-	Map<String,Account> accountMap = null;
-
 	/**
 	   Method:	ServerSolution
 	   Inputs:	void
 	   Returns:	void
-	   
+
 	   Description: Reads in the existing account from a file.
 	 */
 	public ServerSolution() {
@@ -66,41 +64,11 @@ class ServerSolution implements AccountServer {
 	}
 
 	/**
-	   Method:	newAccountFactory
-	   Inputs:	String, String, float
-	   Returns:	boolean
-	   
-	   Description: Creates a new Account of the given type and adds it to the accountMap. Returns true if successful, false if it fails.
-	 */
-	private boolean _newAccountFactory(String type, String name, float balance)
-		throws IllegalArgumentException {
-
-		if (accountMap.get(name) != null) return false;
-
-		Account acc;
-		if ("Checking".equals(type)) {
-			acc = new Checking(name, balance);
-
-		} else if ("Savings".equals(type)) {
-			acc = new Savings(name, balance);
-
-		} else {
-			throw new IllegalArgumentException("Bad account type:" + type);
-		}
-		try {
-			accountMap.put(acc.getName(), acc);
-		} catch (Exception exc) {
-			return false;
-		}
-		return true;
-	}
-
-	/**
 	   Method:	newAccount
 	   Inputs:	String, String, float
 	   Returns:	boolean
-	   
-	   Description: Checks that the given balance is greater than 0. It then calls newAccountFactory(String, String, float). Returns true 
+
+	   Description: Checks that the given balance is greater than 0. It then calls newAccountFactory(String, String, float). Returns true
 	   if successful, false if it fails.
 	 */
 	public boolean newAccount(String type, String name, float balance)
@@ -115,7 +83,7 @@ class ServerSolution implements AccountServer {
 	   Method:	closeAccount
 	   Inputs:	String
 	   Returns:	boolean
-	   
+
 	   Description: Sets the state of an account with the given name to CLOSED. Returns true if successful, false if it fails.
 	 */
 	public boolean closeAccount(String name) {
@@ -150,7 +118,7 @@ class ServerSolution implements AccountServer {
 	   Method:	saveAccounts
 	   Inputs:	void
 	   Returns:	void
-	   
+
 	   Description: Saves all existing accounts to a file.
 	 */
 	public void saveAccounts() throws IOException {
@@ -175,5 +143,37 @@ class ServerSolution implements AccountServer {
 			}
 		}
 	}
+
+	/**
+	   Method:	newAccountFactory
+	   Inputs:	String, String, float
+	   Returns:	boolean
+
+	   Description: Creates a new Account of the given type and adds it to the accountMap. Returns true if successful, false if it fails.
+	 */
+	private boolean _newAccountFactory(String type, String name, float balance)
+		throws IllegalArgumentException {
+
+		if (accountMap.get(name) != null) return false;
+
+		Account acc;
+		if ("Checking".equals(type)) {
+			acc = new Checking(name, balance);
+
+		} else if ("Savings".equals(type)) {
+			acc = new Savings(name, balance);
+
+		} else {
+			throw new IllegalArgumentException("Bad account type:" + type);
+		}
+		try {
+			accountMap.put(acc.getName(), acc);
+		} catch (Exception exc) {
+			return false;
+		}
+		return true;
+	}
+
+	private Map<String,Account> accountMap = null;
 
 }

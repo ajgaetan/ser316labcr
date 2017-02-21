@@ -15,13 +15,11 @@ package banking.primitive.core;
 */
 public class AccountServerFactory {
 
-	protected static AccountServerFactory _singleton = null;
-
 	/**
 	   Method:	AccountServerFactory
 	   Inputs:	void
 	   Returns:	void
-	   
+
 	   Description: Default constructor that does nothing
 	 */
 	protected AccountServerFactory() {
@@ -32,7 +30,7 @@ public class AccountServerFactory {
 	   Method:	AccountServerFactory
 	   Inputs:	void
 	   Returns:	AccountServerFactory
-	   
+
 	   Description: Returns the current instance
 	 */
 	public static AccountServerFactory getMe() {
@@ -47,10 +45,13 @@ public class AccountServerFactory {
 	   Method:	lookup
 	   Inputs:	void
 	   Returns:	ServerSolution
-	   
+
 	   Description: Returns an instance of the server
 	 */
 	public AccountServer lookup() {
 		return new ServerSolution();
 	}
+
+	protected static AccountServerFactory _singleton = null;
+
 }

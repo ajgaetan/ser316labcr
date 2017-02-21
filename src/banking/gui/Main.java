@@ -1,8 +1,8 @@
 /*
-   File: Main.java 
+   File: Main.java
    Author: SER 316, Damien Raske II, Adam Gaetano
    Date: February 20 2017
-  
+
    Description: Contains the main method. Initializes construction of the JFrame.
  */
 
@@ -16,21 +16,12 @@ import javax.swing.JFrame;
   Description: Class for main method
 */
 final class Main {
-	/**
-	   Method:	Main
-	   Inputs:	void
-	   Returns:	void
-	   
-	   Description: Who knows?
-	 */
-	private Main() {
-	}
 
 	/**
 	   Method:	main
 	   Inputs:	String[]
 	   Returns:	void
-	   
+
 	   Description: Programs main method. Program exits if no argument is given. Initializes MainFrame with the given arg as a parameter.
 	 */
 	public static void main(final String[] args) throws Exception {
@@ -45,4 +36,15 @@ final class Main {
 		FRAME.setVisible(true);
 
 	}
+
+	/**
+		 Method:	Main
+		 Inputs:	void
+		 Returns:	void
+
+		 Description: Who knows?
+	 */
+	private Main() {
+	}
+
 }

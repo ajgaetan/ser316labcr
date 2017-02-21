@@ -14,14 +14,12 @@ package banking.primitive.core;
   Description: Account class for Savings account implementation
 */
 public class Savings extends Account {
-	private static final long _SERIAL_VERSION_UID = 111L;
-	private int numWithdraws = 0;
 
 	/**
 	   Method:	Savings
 	   Inputs:	String
 	   Returns:	void
-	   
+
 	   Description: Calls the Account(String) constructor.
 	 */
 	public Savings(String name) {
@@ -32,7 +30,7 @@ public class Savings extends Account {
 	   Method:	Savings
 	   Inputs:	String, float
 	   Returns:	void
-	   
+
 	   Description: Calls the Account(String, float) constructor.
 	 */
 	public Savings(String name, float balance) throws IllegalArgumentException {
@@ -43,9 +41,9 @@ public class Savings extends Account {
 	   Method:	deposit
 	   Inputs:	float
 	   Returns:	boolean
-	   
-	   Description: If the state is not CLOSED and the amount being deposited it greater than 0, then the amount is deposited. 50 cents 
-	   is charged for each deposit. If the deposit brings the account balance over 0 then the account state is set to OPEN. Returns true 
+
+	   Description: If the state is not CLOSED and the amount being deposited it greater than 0, then the amount is deposited. 50 cents
+	   is charged for each deposit. If the deposit brings the account balance over 0 then the account state is set to OPEN. Returns true
 	   if successful, false if it fails.
 	 */
 	public boolean deposit(float amount) {
@@ -62,9 +60,9 @@ public class Savings extends Account {
 	   Method:	withdraw
 	   Inputs:	float
 	   Returns:	boolean
-	   
-	   Description: If the account is open and the amount is greater than 0, then the amount is withdrawn. After 3 withdrawals a $1 fee is 
-	   charged per withdrawal. If the withdrawal being the balance below zero the account is changed to OVERDRAWN. Returns true if successful, 
+
+	   Description: If the account is open and the amount is greater than 0, then the amount is withdrawn. After 3 withdrawals a $1 fee is
+	   charged per withdrawal. If the withdrawal being the balance below zero the account is changed to OVERDRAWN. Returns true if successful,
 	   false if it fails.
 	 */
 	public boolean withdraw(float amount) {
@@ -88,10 +86,14 @@ public class Savings extends Account {
 	   Method:	toString
 	   Inputs:	void
 	   Returns:	String
-	   
+
 	   Description: Returns a String representation of the Savings account.
 	 */
 	public String toString() {
 		return "Savings: " + getName() + ": " + getBalance();
 	}
+
+	private static final long _SERIAL_VERSION_UID = 111L;
+	private int numWithdraws = 0;
+
 }
