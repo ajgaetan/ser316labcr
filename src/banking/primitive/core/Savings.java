@@ -67,7 +67,7 @@ public class Savings extends Account {
 	   false if it fails.
 	 */
 	public boolean withdraw(float amount) {
-		if (_getState() == State.OPEN && amount > 0.0f) {
+		if (_getState() == State.OPEN && amount > 0.0f && _balance - amount > -100.0) {
 			_balance = _balance - amount;
 			numWithdraws++;
 			if (numWithdraws > 3){
