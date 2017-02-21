@@ -48,7 +48,6 @@ class MainFrame extends JFrame {
 			fis.close();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
-			throw ioe;
 		}
 		_constructForm();
 	}
