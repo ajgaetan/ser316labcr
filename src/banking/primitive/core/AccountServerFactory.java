@@ -1,8 +1,8 @@
-/* 
+/*
    File: AccountServerFactory.java
    Author: SER 316, Damien Raske II, Adam Gaetano
    Date: February 20 2017
-  
+
     Description: Creates the serverSolution object which manages the banks accounts.
  */
 
@@ -15,18 +15,18 @@ package banking.primitive.core;
 */
 public class AccountServerFactory {
 
-	protected static AccountServerFactory singleton = null;
+	protected static AccountServerFactory _singleton = null;
 
 	protected AccountServerFactory() {
 
 	}
 
 	public static AccountServerFactory getMe() {
-		if (singleton == null) {
-			singleton = new AccountServerFactory();
+		if (_singleton == null) {
+			_singleton = new AccountServerFactory();
 		}
 
-		return singleton;
+		return _singleton;
 	}
 
 	public AccountServer lookup() {

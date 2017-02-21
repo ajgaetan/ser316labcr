@@ -1,8 +1,8 @@
-/* 
+/*
    File: Checking.java
    Author: SER 316, Damien Raske II, Adam Gaetano
    Date: February 20 2017
-  
+
    Description: Contains the data stored in a Checking account and manages what can be done with that data.
  */
 
@@ -15,8 +15,8 @@ package banking.primitive.core;
 */
 public class Checking extends Account {
 
-	private static final long serialVersionUID = 11L;
-	private int numWithdraws = 0;
+	private static final long _serialVersionUID = 11L;
+	private int _numWithdraws = 0;
 
 	private Checking(String name) {
 		super(name);
@@ -35,10 +35,10 @@ public class Checking extends Account {
 	 * @param float is the deposit amount
 	 */
 	public boolean deposit(float amount) {
-		if (getState() != State.CLOSED && amount > 0.0f) {
+		if (_getState() != State.CLOSED && amount > 0.0f) {
 			balance = balance + amount;
 			if (balance >= 0.0f) {
-				setState(State.OPEN);
+				_setState(State.OPEN);
 			}
 			return true;
 		}
@@ -52,13 +52,13 @@ public class Checking extends Account {
 	public boolean withdraw(float amount) {
 		if (amount > 0.0f) {
 			// KG: incorrect, last balance check should be >=
-			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance > -100.0f)) {
+			if (_getState() == State.OPEN || (_getState() == State.OVERDRAWN && balance > -100.0f)) {
 				balance = balance - amount;
-				numWithdraws++;
-				if (numWithdraws > 10)
+				_numWithdraws++;
+				if (_numWithdraws > 10)
 					balance = balance - 2.0f;
 				if (balance < 0.0f) {
-					setState(State.OVERDRAWN);
+					_setState(State.OVERDRAWN);
 				}
 				return true;
 			}
