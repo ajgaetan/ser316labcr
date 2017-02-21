@@ -1,7 +1,9 @@
-/* Author: SER 316, Damien Raske II, Adam Gaetano
- * Date: February 20 2017
- * 
- * Description: Contains the data stored in a Savings account and manages what can be done with that data.
+/* 
+   File: Savings.java
+   Author: SER 316, Damien Raske II, Adam Gaetano
+   Date: February 20 2017
+   
+   Description: Contains the data stored in a Savings account and manages what can be done with that data.
  */
 
 package banking.primitive.core;

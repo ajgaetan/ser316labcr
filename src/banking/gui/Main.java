@@ -1,7 +1,9 @@
-/* Author: SER 316, Damien Raske II, Adam Gaetano
- * Date: February 20 2017
- * 
- * Description: Contains the main method. Initializes construction of the JFrame.
+/*
+   File: Main.java 
+   Author: SER 316, Damien Raske II, Adam Gaetano
+   Date: February 20 2017
+  
+   Description: Contains the main method. Initializes construction of the JFrame.
  */
 
 package banking.gui;

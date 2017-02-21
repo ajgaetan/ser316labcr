@@ -1,7 +1,9 @@
-/* Author: SER 316, Damien Raske II, Adam Gaetano
- * Date: February 20 2017
- * 
- * Description: Creates the serverSolution object which manages the banks accounts.
+/* 
+   File: AccountServerFactory.java
+   Author: SER 316, Damien Raske II, Adam Gaetano
+   Date: February 20 2017
+  
+    Description: Creates the serverSolution object which manages the banks accounts.
  */
 
 package banking.primitive.core;

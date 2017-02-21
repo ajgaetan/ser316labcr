@@ -1,7 +1,9 @@
-/* Author: SER 316, Damien Raske II, Adam Gaetano
- * Date: February 20 2017
- * 
- * Description: Reads in all existing accounts from a file. Manages what a bank can do with its accounts by implements the AccountServer class interface.
+/* 
+   File: ServerSolution.java
+   Author: SER 316, Damien Raske II, Adam Gaetano
+   Date: February 20 2017
+   
+   Description: Reads in all existing accounts from a file. Manages what a bank can do with its accounts by implements the AccountServer class interface.
  */
 
 package banking.primitive.core;

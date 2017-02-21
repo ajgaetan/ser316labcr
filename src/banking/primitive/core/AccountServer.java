@@ -1,7 +1,9 @@
-/* Author: SER 316, Damien Raske II, Adam Gaetano
- * Date: February 20 2017
- * 
- * Description: Interface that details what a bank can do with its accounts.
+/* 
+   File: AccountServer.java
+   Author: SER 316, Damien Raske II, Adam Gaetano
+   Date: February 20 2017
+   
+   Description: Interface that details what a bank can do with its accounts.
  */
 
 package banking.primitive.core;
